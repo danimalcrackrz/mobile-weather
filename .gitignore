@@ -9,6 +9,8 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+# TODO: remove this when we have reduced the number of svgs needed
+assets/svg
 
 # macOS
 .DS_Store
