@@ -1,9 +1,15 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useRecoilState } from 'recoil'
+import { WEATHERSTATE } from '../atoms'
 import Temperature from '../components/Temperature'
 
 const Homescreen = () => {
-  const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=dallas'
+  const [currentWeather, setCurrentWeather] = useRecoilState(WEATHERSTATE)
+
+  const query = 'dallas'
+
+  const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${query}`
   const options = {
     method: 'GET',
     headers: {
@@ -12,21 +18,22 @@ const Homescreen = () => {
     },
   }
 
-  // useEffect(() => {
-  //   const getdata = async () => {
-  //     try {
-  //       const response = await fetch(url, options)
-  //       const result = await response.text()
-  //       console.log(result)
-  //     } catch (error) {
-  //       console.error(error)
-  //     }
-  //   }
-  //   getdata()
-  // }, [])
+  useEffect(() => {
+    const getWeather = async () => {
+      try {
+        const response = await fetch(url, options)
+        const result = await response.json()
+        console.log(result)
+        setCurrentWeather(result)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    getWeather()
+  }, [])
 
   return (
-    <View className='border-2 h-full'>
+    <View className='border-b-2 h-full p-2'>
       <Temperature />
     </View>
   )

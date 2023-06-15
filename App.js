@@ -1,12 +1,13 @@
-import { StatusBar } from 'expo-status-bar'
-import { useEffect } from 'react'
-import { Text, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import Homescreen from './screens/Homescreen'
+import { RecoilRoot } from 'recoil'
 
 export default function App() {
   return (
-    <SafeAreaView className=''>
-      <Homescreen />
-    </SafeAreaView>
+    <RecoilRoot>
+      <SafeAreaView>
+        <Homescreen />
+      </SafeAreaView>
+    </RecoilRoot>
   )
 }
