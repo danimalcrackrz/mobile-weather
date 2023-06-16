@@ -20,7 +20,6 @@ const Temperature = () => {
         <Text className='text-8xl'>{temp_f}&deg;</Text>
       </View>
       <View className='p-2'>
-        {/* <Image source={require('../assets/svg/partly-cloudy-day.svg')} /> */}
         <Text>{cityCondition}</Text>
       </View>
     </View>
