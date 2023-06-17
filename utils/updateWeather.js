@@ -9,7 +9,7 @@ export const useUpdateWeather = () => {
   useEffect(() => {
     const getWeather = async () => {
       const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${
-        query === '' ? 'dallas' : query
+        query === '' || query.length <= 2 ? 'dallas' : query
       }`
       const options = {
         method: 'GET',
@@ -23,6 +23,7 @@ export const useUpdateWeather = () => {
       try {
         const response = await fetch(url, options)
         const result = await response.json()
+        console.log(result)
         setCurrentWeather(result)
       } catch (error) {
         console.error(error)
