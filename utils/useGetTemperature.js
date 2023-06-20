@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
+import { API_KEY } from '@env'
 import { WEATHERSTATE, QUERYSTATE } from '../atoms'
 
 export const useGetTemperature = () => {
@@ -15,8 +16,7 @@ export const useGetTemperature = () => {
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key':
-            '1bdf16303amsh20eda7b1f755003p1ed7f6jsncef45f53350d',
+          'X-RapidAPI-Key': API_KEY,
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
         },
       }

@@ -1,6 +1,7 @@
 import { useRecoilState } from 'recoil'
 import { FORECASTSTATE } from '../atoms'
 import { useEffect } from 'react'
+import { API_KEY } from '@env'
 
 export const useGetForecast = () => {
   const [forecast, setForecast] = useRecoilState(FORECASTSTATE)
@@ -13,8 +14,7 @@ export const useGetForecast = () => {
       const options = {
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key':
-            '1bdf16303amsh20eda7b1f755003p1ed7f6jsncef45f53350d',
+          'X-RapidAPI-Key': API_KEY,
           'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
         },
       }
