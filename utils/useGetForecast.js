@@ -25,7 +25,6 @@ export const useGetForecast = () => {
         const {
           forecast: { forecastday },
         } = result
-        console.log(result)
         setForecast(forecastday)
       } catch (error) {
         console.error(error)

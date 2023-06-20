@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { WEATHERSTATE, QUERYSTATE } from '../atoms'
 
-export const useUpdateWeather = () => {
-  const [currentWeather, setCurrentWeather] = useRecoilState(WEATHERSTATE)
+export const useGetTemperature = () => {
+  const [currentTemperature, setCurrentTemperature] =
+    useRecoilState(WEATHERSTATE)
   const query = useRecoilValue(QUERYSTATE)
 
   useEffect(() => {
-    const getWeather = async () => {
+    const getTemperature = async () => {
       const url = `https://weatherapi-com.p.rapidapi.com/current.json?q=${
         query === '' || query.length <= 2 ? 'dallas' : query
       }`
@@ -23,13 +24,13 @@ export const useUpdateWeather = () => {
       try {
         const response = await fetch(url, options)
         const result = await response.json()
-        console.log(result)
-        setCurrentWeather(result)
+        // console.log(result)
+        setCurrentTemperature(result)
       } catch (error) {
         console.error(error)
       }
     }
 
-    getWeather()
-  }, [query, setCurrentWeather])
+    getTemperature()
+  }, [query, setCurrentTemperature])
 }
