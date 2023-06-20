@@ -1,7 +1,7 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import { useGetForecast } from '../utils/useGetForecast'
-import { useRecoilValue, useSetRecoilState } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { FORECASTSTATE } from '../atoms'
 
 const Forecast = () => {
