@@ -13,11 +13,11 @@ const Temperature = () => {
 
   return (
     <View className='border-2 h-1/5'>
-      <View className='p-2 border-2'>
-        <Text>
+      <View className='p-2 border-2 items-center'>
+        <Text className='text-8xl'>{temp_f}&deg;</Text>
+        <Text className=''>
           {cityName}, {cityRegion}
         </Text>
-        <Text className='text-8xl'>{temp_f}&deg;</Text>
       </View>
       <View className='p-2'>
         <Text>{cityCondition}</Text>

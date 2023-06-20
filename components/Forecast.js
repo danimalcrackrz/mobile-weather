@@ -10,11 +10,28 @@ const Forecast = () => {
 
   return (
     <View className='border-2 h-1/5'>
-      <ScrollView className='border-2 border-red-400' horizontal>
-        {weekForecast?.map((day, i) => (
-          <View key={i} className='border-2 h-10 w-10'>
-            <Text>{day.date}</Text>
-            <Text></Text>
+      <ScrollView
+        className=''
+        horizontal
+        contentContainerStyle={{
+          flex: 1,
+          justifyContent: 'space-around',
+          padding: 10,
+        }}>
+        {weekForecast?.map(({ date, day }, i) => (
+          <View
+            key={i}
+            className='border-2 items-center p-2 rounded-2xl w-28 justify-center'>
+            <Text className='text-3xl'>{day.maxtemp_f}&deg;</Text>
+            <Text>
+              {
+                new Date(date)
+                  .toLocaleDateString('en-US', {
+                    weekday: 'long',
+                  })
+                  .split(',')[0]
+              }
+            </Text>
           </View>
         ))}
       </ScrollView>

@@ -9,7 +9,7 @@ export const useGetForecast = () => {
     const getForecast = async () => {
       const url =
         //TODO: query should not be hardcoded as dallas
-        'https://weatherapi-com.p.rapidapi.com/forecast.json?q=dallas&days=5'
+        'https://weatherapi-com.p.rapidapi.com/forecast.json?q=dallas&days=3'
       const options = {
         method: 'GET',
         headers: {
