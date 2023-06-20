@@ -6,7 +6,7 @@ import {
 } from 'react-native'
 import React, { useState } from 'react'
 import { useRecoilState } from 'recoil'
-import { useUpdateWeather } from '../utils/updateWeather'
+import { useGetTemperature } from '../utils/useGetTemperature'
 import { Ionicons } from '@expo/vector-icons'
 import { QUERYSTATE } from '../atoms'
 
