@@ -9,6 +9,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+.env
 # TODO: remove this when we have reduced the number of svgs needed
 assets/svg
 
