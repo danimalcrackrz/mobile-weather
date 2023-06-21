@@ -22,15 +22,12 @@ const Forecast = () => {
           <View
             key={i}
             className='border-2 items-center p-2 rounded-2xl w-28 justify-center'>
-            <Text className='text-3xl'>{day.maxtemp_f}&deg;</Text>
+            <Text className='text-3xl'>{day.maxtemp_f.toFixed(0)}&deg;</Text>
             <Text>
-              {
-                new Date(date)
-                  .toLocaleDateString('en-US', {
-                    weekday: 'long',
-                  })
-                  .split(',')[0]
-              }
+              {new Date(date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+              })}
             </Text>
           </View>
         ))}
