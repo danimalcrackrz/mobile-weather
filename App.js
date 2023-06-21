@@ -5,7 +5,7 @@ import { RecoilRoot } from 'recoil'
 export default function App() {
   return (
     <RecoilRoot>
-      <SafeAreaView className='bg-violet-500'>
+      <SafeAreaView className='bg-emerald-500'>
         <Homescreen />
       </SafeAreaView>
     </RecoilRoot>
