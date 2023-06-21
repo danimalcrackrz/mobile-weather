@@ -8,10 +8,10 @@ import { useGetTemperature } from '../utils/useGetTemperature'
 const Homescreen = () => {
   useGetTemperature()
   return (
-    <View className='border-b-2 h-full p-2'>
-      <Search />
+    <View className='border-b-2 h-full'>
       <Temperature />
       <Forecast />
+      <Search />
     </View>
   )
 }

@@ -26,7 +26,7 @@ export const useGetTemperature = () => {
         const result = await response.json()
         const {
           current: { temp_f, condition },
-          location: { name, region },
+          location: { name, region, localtime },
         } = result
         setCurrentTemperature(result)
       } catch (error) {
