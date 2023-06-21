@@ -18,7 +18,7 @@ const Forecast = () => {
           justifyContent: 'space-around',
           padding: 10,
         }}>
-        {weekForecast?.map(({ date, day }, i) => (
+        {weekForecast?.map(({ day, date }, i) => (
           <View
             key={i}
             className='border-2 items-center p-2 rounded-2xl w-28 justify-center'>

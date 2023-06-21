@@ -24,10 +24,7 @@ export const useGetTemperature = () => {
       try {
         const response = await fetch(url, options)
         const result = await response.json()
-        const {
-          current: { temp_f, condition },
-          location: { name, region, localtime },
-        } = result
+        const { current, location } = result
         setCurrentTemperature(result)
       } catch (error) {
         console.error(error)
