@@ -9,11 +9,11 @@ import Summary from '../components/Summary'
 const Homescreen = () => {
   useGetTemperature()
   return (
-    <View className='border-b-2 h-full'>
+    <View className='h-full p-2'>
+      <Search />
       <Temperature />
       <Summary />
       <Forecast />
-      <Search />
     </View>
   )
 }

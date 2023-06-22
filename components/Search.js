@@ -10,6 +10,7 @@ const Search = () => {
     <View className='mb-4 flex-row items-center'>
       <TextInput
         placeholder='Enter a City...'
+        placeholderTextColor='black'
         keyboardAppearance='dark'
         value={query}
         onChangeText={setQuery}
