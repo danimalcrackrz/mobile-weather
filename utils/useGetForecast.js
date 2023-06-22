@@ -1,16 +1,19 @@
-import { useRecoilState } from 'recoil'
-import { FORECASTSTATE } from '../atoms'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { FORECASTSTATE, QUERYSTATE } from '../atoms'
 import { useEffect } from 'react'
 import { API_KEY } from '@env'
 
 export const useGetForecast = () => {
   const [forecast, setForecast] = useRecoilState(FORECASTSTATE)
+  const query = useRecoilValue(QUERYSTATE)
 
   useEffect(() => {
     const getForecast = async () => {
       const url =
         //TODO: query should not be hardcoded as dallas
-        'https://weatherapi-com.p.rapidapi.com/forecast.json?q=dallas&days=3'
+        `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${
+          query.length > 3 || 'dallas'
+        }&days=3`
       const options = {
         method: 'GET',
         headers: {
@@ -32,7 +35,7 @@ export const useGetForecast = () => {
     }
 
     getForecast()
-  }, []) // Empty dependency array to run only once
+  }, [query, setForecast]) // Empty dependency array to run only once
 
   return forecast
 }
