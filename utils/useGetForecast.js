@@ -9,11 +9,9 @@ export const useGetForecast = () => {
 
   useEffect(() => {
     const getForecast = async () => {
-      const url =
-        //TODO: query should not be hardcoded as dallas
-        `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${
-          query.length > 3 || 'dallas'
-        }&days=3`
+      const url = `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${
+        query.length > 3 || 'dallas'
+      }&days=3`
       const options = {
         method: 'GET',
         headers: {
@@ -35,7 +33,7 @@ export const useGetForecast = () => {
     }
 
     getForecast()
-  }, [query, setForecast]) // Empty dependency array to run only once
+  }, [query, setForecast])
 
   return forecast
 }
